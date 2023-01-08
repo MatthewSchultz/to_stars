@@ -1,8 +1,6 @@
 # ToStars
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/to_stars`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A simple library for adding star-ratings to numeric types in ruby.
 
 ## Installation
 
@@ -16,17 +14,84 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+By default, adds the to_stars method to Numeric.
+
+```
+3.to_stars #=> "★★★"
+```
+
+Can generate a "out of" rating:
+
+```
+3.to_stars(5) #=> "★★★/5"
+```
+
+### Options
+
+#### out_of (default: nil)
+
+A number to set the "out of" representation. Set to nil to disable.
+
+```
+3.to_stars #=> "★★★"
+3.to_stars(out_of: 5) #=> "★★★/3"
+3.to_stars(out_of: nil) #=> "★★★"
+```
+
+#### seperator (default: '/')
+
+Defines the string to use to seperate the rating and the "out of" representation:
+
+```
+3.to_stars(out_of: 5, seperator: ' out of ') #=> "★★★ out of 5"
+```
+
+#### character (default: '★')
+
+Defines the character to be used for a star:
+
+```
+3.to_stars(character: 'X') #=> "XXX"
+3.to_stars(character: '&#9733;') #=> "&#9733;&#9733;&#9733;"
+```
+
+#### out_of_format (default: :numeric)
+
+Defines the format to use to display the "out of" representation. There are 3 options:
+
+##### :character
+
+Show the "out of" representation as symbols, like the character:
+
+```
+3.to_stars(out_of: 5, out_of_format: :numeric) #=> "★★★/★★★★★"
+```
+
+##### :one_and_numeric
+
+Show the "out of" representation as a numeric representation with a symbol:
+
+```
+3.to_stars(out_of: 5, out_of_format: :numeric) #=> "★★★/5★"
+```
+
+##### :numeric (default)
+
+Show the "out of" representation as a number:
+
+```
+3.to_stars(out_of: 5, out_of_format: :numeric) #=> "★★★/5"
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake` to run the tests and cop. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in [`version.rb`][lib/to_stars/version.rb], and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/to_stars. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/to_stars/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -34,4 +99,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ToStars project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/to_stars/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the ToStars project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](CODE_OF_CONDUCT.md).
