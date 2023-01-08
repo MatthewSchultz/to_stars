@@ -61,6 +61,7 @@ Defines the format to use to display the "out of" representation. There are 3 op
 
 
 **:character**
+
 Show the "out of" representation as symbols, like the character:
 
 ```
@@ -68,6 +69,7 @@ Show the "out of" representation as symbols, like the character:
 ```
 
 **:one_and_numeric**
+
 Show the "out of" representation as a numeric representation with a symbol:
 
 ```
@@ -75,6 +77,7 @@ Show the "out of" representation as a numeric representation with a symbol:
 ```
 
 **:numeric** (default)
+
 Show the "out of" representation as a number:
 
 ```
