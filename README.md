@@ -59,24 +59,22 @@ Defines the character to be used for a star:
 
 Defines the format to use to display the "out of" representation. There are 3 options:
 
-##### :character
 
+**:character**
 Show the "out of" representation as symbols, like the character:
 
 ```
 3.to_stars(out_of: 5, out_of_format: :numeric) #=> "★★★/★★★★★"
 ```
 
-##### :one_and_numeric
-
+**:one_and_numeric**
 Show the "out of" representation as a numeric representation with a symbol:
 
 ```
 3.to_stars(out_of: 5, out_of_format: :numeric) #=> "★★★/5★"
 ```
 
-##### :numeric (default)
-
+**:numeric** (default)
 Show the "out of" representation as a number:
 
 ```
