@@ -74,7 +74,7 @@ Show the "out of" representation as a numeric representation with a symbol:
 3.to_stars(out_of: 5, out_of_format: :numeric) #=> "★★★/5★"
 ```
 
-**:numeric** (default) - 
+**:numeric** (default) -
 Show the "out of" representation as a number:
 
 ```
@@ -85,7 +85,7 @@ Show the "out of" representation as a number:
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake` to run the tests and cop. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in [`version.rb`][lib/to_stars/version.rb], and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in [`version.rb`](lib/to_stars/version.rb), and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
